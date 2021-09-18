@@ -16,6 +16,7 @@ class CreateUpazilasTable extends Migration
         Schema::create('upazilas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('district_id');
+            $table->unsignedBigInteger('enabled')->default(1);
             $table->string('name');
             $table->timestamps();
             $table->foreign('district_id')->references('id')->on('districts');
