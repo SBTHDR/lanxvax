@@ -618,3 +618,14 @@ function lanxvax_categories() {
 
     return $categories;
 }
+
+function lanxvaxAgeDifference($data) {
+    $dob = new DateTime($data);
+    $now = new DateTime();
+
+    $difference = $now->diff($dob);
+
+    $age = $difference->y;
+
+    return $age;
+}
